@@ -21,7 +21,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/TestWebApiDocker" -f  "TestWebApiDocker/Dockerfile" -t pumkkotestazure.azurecr.io/pumkkonetcoretest-img:${{ github.sha }}
+        docker build "." -f  "TestWebApiDocker/Dockerfile" -t pumkkotestazure.azurecr.io/pumkkonetcoretest-img:${{ github.sha }}
         docker push pumkkotestazure.azurecr.io/pumkkonetcoretest-img:${{ github.sha }}
 
     - name: Set Web App ACR authentication
